@@ -1,0 +1,4 @@
+.notes-upload {
+    display: flex;
+    flex-direction: column;
+}

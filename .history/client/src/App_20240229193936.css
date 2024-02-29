@@ -1,0 +1,24 @@
+.right-content-container {
+  background-color: pink;
+  padding: 3rem ;
+}
+
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: row;
+}
+
+.left-content-container {
+  width: 13vw;
+}
+
+.right-content-container {
+  width: 87vw;
+
+}

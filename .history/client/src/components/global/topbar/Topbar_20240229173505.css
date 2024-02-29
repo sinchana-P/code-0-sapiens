@@ -1,0 +1,10 @@
+.topbar-container {
+    background-color: #4A55A2;
+    width: 100vw;
+    height: 4rem;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+}

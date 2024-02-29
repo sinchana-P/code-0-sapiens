@@ -1,0 +1,26 @@
+.right-content-container {
+  /* background-color: pink; */
+  display: flex;
+  align-items: center;
+  justify-content:start;
+}
+
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: row;
+}
+
+.left-content-container {
+  width: 13vw;
+}
+
+.right-content-container {
+  width: 87vw;
+
+}
