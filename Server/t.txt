@@ -1,0 +1,7 @@
+Deep Blue (#004080): 30%
+Emerald Green (#007A5E): 25%
+Golden Yellow (#FFD700): 15%
+Neutral Gray (#808080): 15%
+Crisp White (#FFFFFF): 10%
+Soft Orange (#FFA07A): 5%
+
