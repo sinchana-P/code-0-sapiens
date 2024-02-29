@@ -57,3 +57,28 @@ app.post("/register",(req,res)=>{
         }
     })
 })
+
+app.post("/addnotes",(req,res)=>{
+    let subject = req.body.subject; 
+    let classno = req.body.class;
+
+    let sql = "";
+
+    db.query(sql,(err,result)=>{
+        if(err){
+            console.log(err.message)
+        }
+        else{
+            res.send(result)
+        }
+    })
+})
+
+app.patch("/addnotestodb",(req,res)=>{
+    let subject = req.body.subject;
+    let module = req.body.module;
+    let chapter = req.body.chapter;
+    let pdf = req.body.pdf;
+    let link = req.body.link;
+    let classno = req.body.class;
+})
