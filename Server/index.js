@@ -62,7 +62,7 @@ app.post("/addnotes",(req,res)=>{
     let subject = req.body.subject; 
     let classno = req.body.class;
 
-    let sql = "";
+    let sql = `select * from notes where sub_id = '${subject}' and class_id = '${classno}'; `;
 
     db.query(sql,(err,result)=>{
         if(err){
@@ -79,6 +79,26 @@ app.patch("/addnotestodb",(req,res)=>{
     let module = req.body.module;
     let chapter = req.body.chapter;
     let pdf = req.body.pdf;
+    let classno = req.body.class;
+
+    let sql = `update notes set pdf = ${pdf} where class_id = '${classno}' and sub_id = '${subject}' and mod_id = '${module}' and chp_id = '${chapter}';`;
+
+    db.query(sql,(err,result)=>{
+        if(err){
+            console.log(err.message)
+        }
+        else{
+            res.json({message:"success"})
+        }
+    })
+})
+
+app.patch("/addlinktodb",(req,res)=>{
+    let subject = req.body.subject;
+    let module = req.body.module;
+    let chapter = req.body.chapter;
     let link = req.body.link;
     let classno = req.body.class;
+
+    
 })
