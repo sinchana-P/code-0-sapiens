@@ -1,0 +1,16 @@
+.plans-main{
+    width: 80vw;
+    max-height: ;
+
+}
+
+.module-chapters-checkbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+h3{
+    text-align: start;
+}
+

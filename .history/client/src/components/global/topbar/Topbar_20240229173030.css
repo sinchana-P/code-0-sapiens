@@ -1,0 +1,10 @@
+.topbar-container {
+    background-color: rgba(63, 51, 195, 0.51);
+    width: 100vw;
+    height: 4rem;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: row;
+}

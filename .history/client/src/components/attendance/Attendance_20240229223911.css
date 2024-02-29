@@ -1,0 +1,20 @@
+.attendance-main {
+    background-color: pink;
+    width: 80vw;
+}
+
+.attendance-class {
+    /* background-color: pink; */
+}
+
+.attendance-class-inputs-container {
+    display: flex;
+    flex-direction: row;
+    min-width: 80vw;
+    background-color: red;
+}
+
+.attendance-class-each {
+    background-color: black;
+    padding: ;
+}

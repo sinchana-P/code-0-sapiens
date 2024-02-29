@@ -1,0 +1,29 @@
+h3 {
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.notes-form-container {
+    padding: 1rem 0;
+}
+
+.notes-upload-main {
+    display: flex;
+    flex-direction: row;
+}
+
+
+.notes-upload-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.notes-pdf, .notes-link {
+    display: flex;
+    flex-direction: row;
+    padding: 0.5rem 0;
+}
+
+.notes-upload-container {
+    padding: 2rem 0;
+}

@@ -1,0 +1,19 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: row;
+}
+
+.left-content-container {
+  max-width: 13vw;
+  background-color: black;
+}
+
+.right-content-container {
+  width: 87vw;
+  background-color: pink;
+}

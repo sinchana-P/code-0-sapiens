@@ -4,7 +4,7 @@ import bodyParser from "body-parser"
 const db = mysql.createConnection({
     host:"localhost",
     user:"root",
-    password:"mysql",
+    password:"S@nketh2",
     database:"college"
 })
 const port = 3000

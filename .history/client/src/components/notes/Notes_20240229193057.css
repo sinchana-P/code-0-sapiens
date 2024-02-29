@@ -1,0 +1,9 @@
+.notes-upload-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.notes-material {
+    display: flex;
+    flex-direction: row;
+}

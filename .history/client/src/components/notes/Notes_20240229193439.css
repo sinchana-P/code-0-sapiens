@@ -1,0 +1,15 @@
+.notes-upload-main {
+    display: flex;
+    flex-direction: row;
+}
+
+
+.notes-upload-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.notes-pdf, .notes-link {
+    display: flex;
+    flex-direction: row;
+}
