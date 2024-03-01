@@ -79,17 +79,17 @@ const handleFileChange = (info) => {
                     </Form.Item>
 
                     <Form.Item
-                    label="class"
-                    name="class"
+                    label="chapter"
+                    name="chapter"
                     style={{width: '80%' }}
                     rules={[
                         {
                         required: true,
-                        message: 'Please select module!',
+                        message: 'Please select Chapter!',
                         },
                     ]}
                     >
-                        <Select placeholder='Select Module'>
+                        <Select placeholder='Select Chapter'>
                             <Select.Option value="chapter1">Chapter 1</Select.Option>
                             <Select.Option value="chapter2">Chapter 2</Select.Option>
                             <Select.Option value="chapter3">Chapter 3</Select.Option>

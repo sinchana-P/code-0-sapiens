@@ -1,0 +1,62 @@
+.student-portal-container {
+    max-width: 1200px;
+    margin: 0 0 0 -10rem;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .section-heading {
+    padding-bottom: 0px;
+    margin-right: 20rem;
+  }
+  
+  .modules-list {
+    display: flex;
+    margin-left: 5rem;
+    /* justify-content: space-between; */
+  }
+  
+  .module {
+    flex: 1;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 0 10px;
+  }
+  
+  .module-title {
+    margin-bottom: 10px;
+  }
+  
+  .chapter-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .chapter-item {
+    margin-bottom: 5px;
+  }
+  
+  .download-button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin: 10px;
+  }
+  
+  .download-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .footer {
+    text-align: center;
+    margin-top: 20px;
+  }

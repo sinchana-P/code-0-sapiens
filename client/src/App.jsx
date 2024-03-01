@@ -36,6 +36,7 @@ function App() {
           </div>
           <div className='right-content-container'>
             <Routes> 
+            <Route path='/' element={ <Notes/> } />
               <Route path='/login' element={ <Login/> } />
               <Route path='/register' element={ <Register/> } />
               <Route path='/home' element={ <Home/> } />
@@ -45,8 +46,8 @@ function App() {
               {/* <Route path='/profile' element={ <Profile/> } /> */}
               <Route path='/student' element={ <StdHome/> } />
               <Route path='/student/attendance' element={ <StdAttendance/> } />
-              <Route path='/student/attendance' element={ <StdNotes/> } />
-              <Route path='/student/attendance' element={ <StdDoubts/> } />                  
+              <Route path='/student/notes' element={ <StdNotes/> } />
+              <Route path='/student/doubts' element={ <StdDoubts/> } />                  
             </Routes>
           </div>
         </div>

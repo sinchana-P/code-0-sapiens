@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 // import dayjs from 'dayjs';
 import { Form, Select, Checkbox, DatePicker, TimePicker, Table} from 'antd';
-
+import axios from 'axios'
 
 import './Attendance.css'
 
 const Attendance = () => {
 
-    const [selectedRows, setSelectedRows] = useState([{}])
+    const [selectedRows, setSelectedRows] = useState([])
 
     const attendanceData = [
     {
@@ -72,48 +72,80 @@ const Attendance = () => {
         },
     ]
 
+    const [stdClass, setStdClass] = useState('')
+    const [subject, setSubject] = useState('')
+    const [date, setDate] = useState('')
+    const [time, setTime] = useState('')
+
     const onChangeDate = (date, dateString) => {
-        console.log(dateString);
+        // console.log(dateString);
+        setDate(dateString)
     };
 
     const onChangeTime = (time, timeString) => {
-        console.log(timeString);
+        // console.log(timeString);
+        setTime(timeString)
     };
+
+    const onSubmit = () => {
+
+        console.log(stdClass, subject, date, time)
+        
+        const res = axios.get('http://localhost:3500/getstudents', {
+            params: {class: stdClass, subject }
+        })
+
+        console.log(res)
+
+    }
+
+    const handleUpdateAttendance = () => {
+        console.log(selectedRows);
+
+        const res2 = axios.get('http://localhost:3500/sendattendance', {
+            params: {selectedRows}
+        })
+
+        console.log(res2)
+    }
 
   return (
     <div className='attendance-main'>
-        <h2>Attendance</h2>
+        <h2 className='heading'>Attendance</h2>
         <div>
             <Form
                 layout="vertical"
                 name="basic"
-                labelCol={{ span: 8 }}
-                wrapperCol={{ span: 16 }}
-                style={{ maxWidth: 600 }}
+                labelCol={{ span: 10 }}
+                wrapperCol={{ span: 15 }}
+                style={{ maxWidth: 80 }}
                 initialValues={{ remember: true }}
                 autoComplete="off"
             >
             <div className='attendance-class-inputs-container'>
+                <div className='selectClass'>
                 <div className='attendance-class-each'>
-                    <Form.Item label="Class" style={{width: '300px' }} rules={[{ required: true, message: 'Please select class!' }]}>
-                    <Select placeholder="class">
-                        <Select.Option value="class8">Class 8</Select.Option>
-                        <Select.Option value="class9">Class 9</Select.Option>
-                        <Select.Option value="class10">Class 10</Select.Option>
+                    <Form.Item label="Class" style={{width: '200px' }} rules={[{ required: true, message: 'Please select class!' }]}>
+                    <Select placeholder="Class" onChange={value => setStdClass(value)}>
+                        <Select.Option value="8">Class 8</Select.Option>
+                        <Select.Option value="9">Class 9</Select.Option>
+                        <Select.Option value="10">Class 10</Select.Option>
                     </Select>
                     </Form.Item>
                 </div>
 
                 <div className='attendance-class-each'>
-                    <Form.Item label="Subject" style={{width: '300px' }} rules={[{ required: true, message: 'Please select class!' }]}>
-                    <Select placeholder="Subject">
-                        <Select.Option value="maths">Maths</Select.Option>
-                        <Select.Option value="science">Science</Select.Option>
-                        <Select.Option value="social">Social</Select.Option>
+                    <Form.Item label="Subject" style={{width: '200px' }} rules={[{ required: true, message: 'Please select class!' }]}>
+                    <Select placeholder="Subject" onChange={value => setSubject(value)}>
+                        <Select.Option value="1">Maths</Select.Option>
+                        <Select.Option value="2">Science</Select.Option>
+                        <Select.Option value="3">Social</Select.Option>
                     </Select>
                     </Form.Item>
                 </div>
+                </div>
 
+                <div className='selectClass'>
                 <div className='attendance-class-each'>
                     <Form.Item label="Date" rules={[{ required: true, message: 'Please select class!' }]}>
                         <DatePicker onChange={onChangeDate} style={{width: '200px' }} />
@@ -126,34 +158,42 @@ const Attendance = () => {
                     </Form.Item>
                 </div>
                 </div>
+
+                <div className='selectClass' style={{marginTop: '6rem'}}>
+                    <button onClick={onSubmit}>Submit</button>
+                </div>
+
+                </div>
+
+                
             </Form>
+            
         </div>
 
         <div>
-        <Table
-        dataSource={attendanceData}
-        columns={attendanceColumns}
-        pagination={false}
-        rowSelection={
-          {
-            type: 'checkbox',
-            hideSelectAll: true,
-            onChange: (key) => {
-              console.log(key)
-            },
-            onSelect: (keySelected) => {
-              console.log(keySelected)
-              setSelectedRows([...selectedRows, keySelected])
-              console.log(selectedRows)
+            <Table
+                dataSource={attendanceData}
+                columns={attendanceColumns}
+                pagination={false}
+                rowSelection={
+                {
+                    type: 'checkbox',
+                    hideSelectAll: true,
+                    onChange: (key) => {
+                        console.log(key)
+                    },
+                    onSelect: (keySelected) => {
+                        console.log(keySelected)
+                        console.log(selectedRows)
+                        setSelectedRows([...selectedRows, keySelected])
+                        console.log(selectedRows)
+                    }
             }
-          }
-        }
-      >
-      </Table>
-
-      <button>Submit</button>
+            }
+        >
+            </Table>
         </div>
-
+        <button onClick={handleUpdateAttendance}>Update Attendance</button>
 
     </div>
   )

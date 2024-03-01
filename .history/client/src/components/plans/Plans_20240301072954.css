@@ -1,0 +1,21 @@
+.plans-main{
+    width: 87vw;
+    padding: 0.2rem 5rem;
+    /* max-height: 90vh; */
+
+}
+
+.module-chapters-checkbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.heading {
+    margin-left: 5rem;
+}
+
+.plans-checkbox-chart-container {
+    display: flex;
+    flex
+}

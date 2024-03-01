@@ -7,7 +7,7 @@ export const SidebarData=[
        {
               title:"Home",
               icon:<IoIosHome />,
-              route:"/"
+              route:"/home"
        },
        {
               title:"Notes",
