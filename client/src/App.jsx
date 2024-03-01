@@ -30,7 +30,7 @@ function App() {
           <div className='left-content-container'>
           
           {
-            userRole === 'student' ? (<Sidebar /> ) : (<StudentSidebar /> )
+            userRole === 'Teacher' ? (<Sidebar /> ) : (<StudentSidebar /> )
           }
 
           </div>
