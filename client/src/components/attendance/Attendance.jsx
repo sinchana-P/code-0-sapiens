@@ -137,9 +137,9 @@ const Attendance = () => {
                 <div className='attendance-class-each'>
                     <Form.Item label="Subject" style={{width: '200px' }} rules={[{ required: true, message: 'Please select class!' }]}>
                     <Select placeholder="Subject" onChange={value => setSubject(value)}>
-                        <Select.Option value="maths">Maths</Select.Option>
-                        <Select.Option value="science">Science</Select.Option>
-                        <Select.Option value="social">Social</Select.Option>
+                        <Select.Option value="1">Maths</Select.Option>
+                        <Select.Option value="2">Science</Select.Option>
+                        <Select.Option value="3">Social</Select.Option>
                     </Select>
                     </Form.Item>
                 </div>

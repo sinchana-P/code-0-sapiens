@@ -8,7 +8,7 @@ import cors from 'cors'
 const db = mysql.createConnection({
     host:"localhost",
     user:"root",
-    password:"2002",
+    password:"S@nketh2",
     database:"college"
 })
 const port = 3500
