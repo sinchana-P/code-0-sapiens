@@ -132,7 +132,7 @@ const Plans = () => {
     console.log(stdClass, subject)
 
     const res = axios.get('http://localhost:3500/getlessonplan', {
-        params: {class: stdClass, subject }
+        params: {classnum: stdClass, subject }
     })
 
     console.log(res)
@@ -163,8 +163,8 @@ const Plans = () => {
                 <Form.Item label="Subject" rules={[{ required: true, message: 'Please select class!' }]}>
                 <Select placeholder="Subject" onChange={value => setSubject(value)}>
                     <Select.Option value="1">Maths</Select.Option>
-                    <Select.Option value="2">Science</Select.Option>
-                    <Select.Option value="3">Social</Select.Option>
+                    <Select.Option value="science">Science</Select.Option>
+                    <Select.Option value="social">Social</Select.Option>
                 </Select>
                 </Form.Item>
                 </Form>

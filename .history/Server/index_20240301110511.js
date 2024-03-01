@@ -135,6 +135,8 @@ app.get("/getlessonplan",(req,res)=>{
             res.json(result);
         }
     })
+
+    promi
 })
 
 // app.get("/getlessonplan", (req, res) => {

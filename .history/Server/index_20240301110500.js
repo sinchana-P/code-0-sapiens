@@ -127,7 +127,7 @@ app.get("/getlessonplan",(req,res)=>{
 
     let sql = `select * from lesson_plan where cls_id = '${classnum}' and sub_id = '${subject}';`
 
-    const promise = db.query(sql,(err,result)=>{
+    const promdb.query(sql,(err,result)=>{
         if(err){
             console.log(err.message)
         }

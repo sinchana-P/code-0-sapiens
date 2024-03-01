@@ -121,21 +121,21 @@ app.get("/sendattendance",(req,res)=>{
 
 })
 
-app.get("/getlessonplan",(req,res)=>{
-    let classnum = req.query.class;
-    let subject = req.query.subject;
+// app.get("/getlessonplan",(req,res)=>{
+//     let classnum = req.query.class;
+//     let subject = req.query.subject;
 
-    let sql = `select * from lesson_plan where cls_id = '${classnum}' and sub_id = '${subject}';`
+//     let sql = `select * from lesson_plan where cls_id = '${classnum}' and sub_id = '${subject}';`
 
-    const promise = db.query(sql,(err,result)=>{
-        if(err){
-            console.log(err.message)
-        }
-        else{
-            res.json(result);
-        }
-    })
-})
+//     db.query(sql,(err,result)=>{
+//         if(err){
+//             console.log(err.message)
+//         }
+//         else{
+//             res.json(result);
+//         }
+//     })
+// })
 
 // app.get("/getlessonplan", (req, res) => {
 //     let classnum = req.query.class;

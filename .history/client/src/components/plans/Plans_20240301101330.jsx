@@ -3,7 +3,7 @@ import { Form, Select, Checkbox } from 'antd';
 import './Plans.css'
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
-import axios from 'axios'
+
 
 const SidebarData = [
   {
@@ -129,13 +129,7 @@ const Plans = () => {
 
   const handleSubmit = () => {
     setIsSubmit(true)
-    console.log(stdClass, subject)
-
-    const res = axios.get('http://localhost:3500/getlessonplan', {
-        params: {class: stdClass, subject }
-    })
-
-    console.log(res)
+    console.log(stdClass, )
   }
 
   return (
@@ -160,11 +154,11 @@ const Plans = () => {
                     <Select.Option value="10">Class 10</Select.Option>
                 </Select>
                 </Form.Item>
-                <Form.Item label="Subject" rules={[{ required: true, message: 'Please select class!' }]}>
+                <Form.Item label="Sub" rules={[{ required: true, message: 'Please select class!' }]}>
                 <Select placeholder="Subject" onChange={value => setSubject(value)}>
-                    <Select.Option value="1">Maths</Select.Option>
-                    <Select.Option value="2">Science</Select.Option>
-                    <Select.Option value="3">Social</Select.Option>
+                    <Select.Option value="maths">Maths</Select.Option>
+                    <Select.Option value="science">Science</Select.Option>
+                    <Select.Option value="social">Social</Select.Option>
                 </Select>
                 </Form.Item>
                 </Form>

@@ -132,7 +132,7 @@ const Plans = () => {
     console.log(stdClass, subject)
 
     const res = axios.get('http://localhost:3500/getlessonplan', {
-        params: {class: stdClass, subject }
+        params: {classnum: stdClass, subject }
     })
 
     console.log(res)

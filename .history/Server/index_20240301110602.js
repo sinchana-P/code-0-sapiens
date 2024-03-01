@@ -135,6 +135,10 @@ app.get("/getlessonplan",(req,res)=>{
             res.json(result);
         }
     })
+
+    promise.then((res) => {
+        return res
+    })
 })
 
 // app.get("/getlessonplan", (req, res) => {

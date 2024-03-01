@@ -135,6 +135,7 @@ app.get("/getlessonplan",(req,res)=>{
             res.json(result);
         }
     })
+    
 })
 
 // app.get("/getlessonplan", (req, res) => {

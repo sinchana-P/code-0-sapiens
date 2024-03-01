@@ -5,7 +5,7 @@ const StdNotes = () => {
   // Sample notes data with module and chapter information
   const [notes, setNotes] = useState([
     // Module 1
-    { id: 1, module: 'Module 1', chapter: 'Chapter 1',pdf:"CAE.pdf",link:"https://byjus.com/ncert-solutions-class-10-maths/chapter-1-real-numbers/"},
+    { id: 1, module: 'Module 1', chapter: 'Chapter 1',pdf:"/files/CAE.pdf",link:"https://byjus.com/ncert-solutions-class-10-maths/chapter-1-real-numbers/"},
     { id: 2, module: 'Module 1', chapter: 'Chapter 2',pdf:"",link:"https://byjus.com/ncert-solutions-class-10-maths/chapter-2-polynomials/"},
     { id: 3, module: 'Module 1', chapter: 'Chapter 3',pdf:"",link:"https://byjus.com/ncert-solutions-class-10-maths/chapter-3-linear-equations-in-two-variables/"},
     { id: 4, module: 'Module 1', chapter: 'Chapter 4',pdf:"",link:"https://byjus.com/ncert-solutions-class-10-maths/chapter-4-quadratic-equations/"},
@@ -64,11 +64,9 @@ const StdNotes = () => {
                 <li key={note.id} className="chapter-item">
                   {note.chapter}
                   {/* Add download button for each chapter */}
-
-                  <a href={note.pdf} download>
-                    <button className="download-button">Notes</button>
+                  <a href={note.pdf}>
+                  <button className="download-button">Notes</button>
                   </a>
-
                   <a href={note.link}>
                   <button className="download-button">Materials</button>
                   </a>

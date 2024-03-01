@@ -135,7 +135,7 @@ const Plans = () => {
         params: {class: stdClass, subject }
     })
 
-    console.log(res)
+    console.log(res.Promise[[PromiseObject]].data)
   }
 
   return (

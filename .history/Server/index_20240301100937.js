@@ -108,7 +108,6 @@ app.get("/getstudents",(req,res)=>{
             console.log(err.message)
         }
         else{
-            console.log(result)
             res.json(result)
         }
     })
@@ -127,7 +126,7 @@ app.get("/getlessonplan",(req,res)=>{
 
     let sql = `select * from lesson_plan where cls_id = '${classnum}' and sub_id = '${subject}';`
 
-    const promise = db.query(sql,(err,result)=>{
+    db.query(sql,(err,result)=>{
         if(err){
             console.log(err.message)
         }
@@ -136,23 +135,6 @@ app.get("/getlessonplan",(req,res)=>{
         }
     })
 })
-
-// app.get("/getlessonplan", (req, res) => {
-//     let classnum = req.query.class;
-//     let subject = req.query.subject;
-
-//     let sql = `SELECT * FROM lesson_plan WHERE cls_id = '${classnum}' AND sub_id = '${subject}';`;
-
-//     db.query(sql)
-//         .then(result => {
-//             res.json(result);
-//         })
-//         .catch(err => {
-//             console.error("Error executing SQL query:", err.message);
-//             res.status(500).json({ error: "Internal Server Error" });
-//         });
-// });
-
 
 app.get("/updatelessonplan",(req,res)=>{
     let sql = `update lesson_plan set is_completed='1' where cls_id = '9' and sub_id = '1' and mod_id = '1' and chp_id = '1';`
