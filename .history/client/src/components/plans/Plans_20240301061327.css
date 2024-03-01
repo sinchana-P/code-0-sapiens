@@ -1,0 +1,17 @@
+.plans-main{
+    width: 87vw;
+    padding: 2rem ;
+    /* max-height: 90vh; */
+
+}
+
+.module-chapters-checkbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.heading {
+    margin-left: 5rem;
+}
+

@@ -1,0 +1,11 @@
+.login-container{
+    padding: 1rem 0;
+    background-color: pink;
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+}
+
+h2 {
+    text-align: center;
+}
