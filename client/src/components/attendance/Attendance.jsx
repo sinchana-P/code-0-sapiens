@@ -7,7 +7,7 @@ import './Attendance.css'
 
 const Attendance = () => {
 
-    const [selectedRows, setSelectedRows] = useState([{}])
+    const [selectedRows, setSelectedRows] = useState([])
 
     const attendanceData = [
     {
@@ -90,12 +90,23 @@ const Attendance = () => {
     const onSubmit = () => {
 
         console.log(stdClass, subject, date, time)
+        
         const res = axios.get('http://localhost:3500/getstudents', {
             params: {class: stdClass, subject }
         })
 
         console.log(res)
 
+    }
+
+    const handleUpdateAttendance = () => {
+        console.log(selectedRows);
+
+        const res2 = axios.get('http://localhost:3500/sendattendance', {
+            params: {selectedRows}
+        })
+
+        console.log(res2)
     }
 
   return (
@@ -160,30 +171,29 @@ const Attendance = () => {
         </div>
 
         <div>
-        <Table
-            dataSource={attendanceData}
-            columns={attendanceColumns}
-            pagination={false}
-            rowSelection={
-            {
-                type: 'checkbox',
-                hideSelectAll: true,
-                onChange: (key) => {
-                console.log(key)
-                },
-                onSelect: (keySelected) => {
-                console.log(keySelected)
-                setSelectedRows([...selectedRows, keySelected])
-                console.log(selectedRows)
-                }
-          }
-        }
-      >
-      </Table>
-
-      <button>Update Attendance</button>
+            <Table
+                dataSource={attendanceData}
+                columns={attendanceColumns}
+                pagination={false}
+                rowSelection={
+                {
+                    type: 'checkbox',
+                    hideSelectAll: true,
+                    onChange: (key) => {
+                        console.log(key)
+                    },
+                    onSelect: (keySelected) => {
+                        console.log(keySelected)
+                        console.log(selectedRows)
+                        setSelectedRows([...selectedRows, keySelected])
+                        console.log(selectedRows)
+                    }
+            }
+            }
+        >
+            </Table>
         </div>
-
+        <button onClick={handleUpdateAttendance}>Update Attendance</button>
 
     </div>
   )
