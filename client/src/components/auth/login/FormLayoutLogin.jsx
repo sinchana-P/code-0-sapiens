@@ -3,9 +3,7 @@ import { Button, Checkbox, Form, Input,Select } from 'antd';
 import { Link } from 'react-router-dom';
 import axios from 'axios'
 
-const onFinish = (values) => {
-  console.log('Success:', values);
-};
+
 
 const onFinishFailed = (errorInfo) => {
   console.log('Failed:', errorInfo);
@@ -19,23 +17,12 @@ const FormLayoutLogin = () => {
   const [password, setPassword] = useState('')
   const [role, setRole] = useState('')
 
-  const onFinish = async (values) => {
+  const onFinish =async (values) => {
     console.log('Success:', values);
     console.log({ name, password, role })
-    
-    // try {
 
-    //   //  register({ name, password, role, phone })
-    //   //  register(values)
-    // } catch (err) {
-    //   console.log(err)
-    // }
-
-    const response=await axios({
-      method:"post",
-      baseURL:"http://localhost:5500",
-      url:"/login",
-      data: { name, password, role }
+    const response=await axios.get("http://localhost:3500/login",{
+      params: values
     })
 
     console.log(response)

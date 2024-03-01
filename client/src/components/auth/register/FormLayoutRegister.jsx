@@ -36,7 +36,7 @@ const FormLayoutRegister = () => {
 
   // const [register] = useRegisterMutation()
 
-  const onFinish = (values) => {
+  const onFinish = async(values) => {
     console.log('Success:', values);
     console.log({ name, password, role, phone })
     
@@ -48,8 +48,8 @@ const FormLayoutRegister = () => {
     //   console.log(err)
     // }
 
-    axios.post('http://localhost:3500/register', {
-      name, password, role, phone, 
+    const response = axios.get('http://localhost:3500/register', {
+      params: values
     }).then(console.log('success')).catch(err => console.log(err));
 
     setName('')

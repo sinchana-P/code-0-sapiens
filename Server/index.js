@@ -8,10 +8,10 @@ import cors from 'cors'
 const db = mysql.createConnection({
     host:"localhost",
     user:"root",
-    password:"2002",
+    password:"S@nketh2",
     database:"college"
 })
-const port = 5500
+const port = 3500
 const app = express()
 
 
@@ -25,77 +25,43 @@ app.listen(port,()=>{
     console.log("server started at http://localhost:"+port);
 })
 
-app.post("/login",(req,res)=>{
-    console.log(req)
-    let role = req.body.role;
-    let userid = req.body.name;
-    let password = req.body.password;
-
-    console.log(role, userid, password)
-
+app.get("/login",(req,res)=>{
+    let role = req.query.role;
+    let userid = req.query.name;
+    let password = req.query.password;
+    console.log(role,userid,password)
     let sql = `select * from user where name='${userid}' and password = '${password}' and role='${role}';`
     db.query(sql,(err,result)=>{
-        if(err){
-            console.log(err.message)
+    if(err) throw err;
+        if(result.length == 0){
+            res.json({authentication:false})
         }
         else{
-            if(result.length === 0){
-                res.json({authentication:false}
-                )
-            }
-            else{
-                
-                res.json({authentication:true})
-            }
+            res.json({authentication:true})
         }
     })
 })
 
-// app.post("/register",(req,res)=>{
-//     let id = req.body.id;
-//     let name = req.body.name;
-//     let password = req.body.password;
-//     let role = req.body.role;
-//     let phone = req.body.phone;
-//     let classnum = req.body.class || null;
+app.get("/register",(req,res)=>{
+    let id = req.body.id;
+    let name = req.query.name;
+    let password = req.query.password;
+    let role = req.query.role;
+    let phone = req.query.phone;
+    let classnum = req.body.class || null;
 
-//     let sql = `insert into user values ('001','${name}','${password}','${role}',null,'${phone}');`
+    let sql = `insert into user values ('001','${name}','${password}','${role}',null,'${phone}');`
 
-//     db.query(sql,(err,result)=>{
-//         if(err){
-//             console.log(err.message)
-//             res.json({message:'you are already registered'})
-//         }
-//         else{
-//             res.json({message:'registered successfully'})
-//         }
-//     })
-// })
-
-// Define the '/register' endpoint
-app.post("/register", (req, res) => {
-    // Extract data from the request body
-    let { name, password, role, phone } = req.body;
-
-    console.log(name, password, role, phone)
-
-    // You may want to generate a unique ID for each user dynamically
-    // For simplicity, let's assume the ID is auto-generated in your database
-
-    // Construct the SQL query to insert the user data into the database
-    let sql = `INSERT INTO user (name, password, role, phone) VALUES ('${name}', '${password}', '${role}', '${phone}')`;
-
-    // Execute the SQL query
-    db.query(sql, (err, result) => {
-        if (err) {
-            console.log(err.message);
-            res.status(500).json({ message: 'An error occurred while registering.' });
-        } else {
-            res.status(200).json({ message: 'User registered successfully.' });
+    db.query(sql,(err,result)=>{
+        if(err){
+            console.log(err.message)
+            res.json({message:'you are already registered'})
         }
-    });
-});
-
+        else{
+            res.json({message:'registered successfully'})
+        }
+    })
+})
 
 app.post("/notes",(req,res)=>{
     let subject = req.body.subject; 
