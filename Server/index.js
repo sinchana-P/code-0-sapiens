@@ -63,9 +63,9 @@ app.get("/register",(req,res)=>{
     })
 })
 
-app.post("/notes",(req,res)=>{
-    let subject = req.body.subject; 
-    let classno = req.body.class;
+app.get("/notes",(req,res)=>{
+    let subject = req.query.subject; 
+    let classno = req.query.class;
 
     let sql = `select * from notes where sub_id = '${subject}' and class_id = '${classno}'; `;
 
