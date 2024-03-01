@@ -4,6 +4,8 @@
   font-family: "Poppins", sans-serif;
 }
 
+
+
 /* --- */
 .full-width-container {
   width: 80%;
@@ -11,11 +13,14 @@
   justify-content: center;
   align-items: center;
 }
+
+
 /* --- */
 
 .right-content-container {
-  background-color: #EEF5FF;
-  display: flex;
+  /* background-color: #ffffff; */
+  background-image: "https://upload.wikimedia.org/wikipedia/commons/b/bd/Emmanuel_College_Front_Court,_Cambridge,_UK_-_Diliff.jpg";
+  /* display: flex; */
   align-items: start;
   justify-content: center;
 }

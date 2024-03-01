@@ -25,6 +25,10 @@ const FormLayoutLogin = () => {
       params: values
     })
 
+    
+
+   
+
     console.log(response)
     // axios.post('http:/localhost:5500/login', {
     //   role, name, password 
@@ -48,6 +52,34 @@ const FormLayoutLogin = () => {
     setPassword('')
   };
 
+  const validatePassword = (_, value) => {
+    // Define your password validation criteria
+    const minLength = 8;
+    const uppercaseRegex = /[A-Z]/;
+    const lowercaseRegex = /[a-z]/;
+    const digitRegex = /\d/;
+    const specialCharRegex = /[!@#$%^&*(),.?":{}|<>]/;
+
+    if (value.length < minLength) {
+      return Promise.reject('Password must be at least 8 characters long.');
+    }
+
+    if (!(uppercaseRegex.test(value) && lowercaseRegex.test(value) && digitRegex.test(value) && specialCharRegex.test(value))) {
+      return Promise.reject('Password must include uppercase and lowercase letters, digits, and special characters.');
+    }
+
+    return Promise.resolve();
+  };
+
+  const validateTextOnly = (_, value) => {
+    const textOnlyRegex = /^[a-zA-Z]+$/; // Regular expression for alphabetic characters
+
+    if (!textOnlyRegex.test(value)) {
+      return Promise.reject('Please enter only alphabetic characters.');
+    }
+
+    return Promise.resolve();
+  };
 
   return (
     <Form
@@ -79,7 +111,7 @@ const FormLayoutLogin = () => {
     <Form.Item
       label="name"
       name="name"
-      rules={[{ required: true, message: "Please input your lastname!" }]}
+      rules={[{ required: true, message: "Please input your lastname!" },{validator:validateTextOnly}]}
     >
       <Input placeholder="username" onChange={e => setName(e.target.value)} />
     </Form.Item>
@@ -87,7 +119,7 @@ const FormLayoutLogin = () => {
     <Form.Item
       label="Password"
       name="password"
-      rules={[{ required: true, message: "Please input your password!" }]}
+      rules={[{ required: true, message: "Please input your password!" },{validator:validatePassword}]}
     >
       <Input.Password placeholder="Password" onChange={e => setPassword(e.target.value)}/>
     </Form.Item>

@@ -41,14 +41,15 @@ app.get("/login",(req,res)=>{
 })
 
 app.get("/register",(req,res)=>{
-    let id = req.query.id;
     let name = req.query.name;
     let password = req.query.password;
     let role = req.query.role;
     let phone = req.query.phone;
+    let id = parstInt(phone/123456);
     let classnum = req.query.class || null;
 
-    let sql = `insert into user values ('001','${name}','${password}','${role}',null,'${phone}');`
+
+    let sql = `insert into user values ('${id}','${name}','${password}','${role}','${classnum}','${phone}');`
 
     db.query(sql,(err,result)=>{
         if(err){
