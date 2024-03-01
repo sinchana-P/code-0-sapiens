@@ -36,6 +36,7 @@ function App() {
           </div>
           <div className='right-content-container'>
             <Routes> 
+            <Route path='/' element={ <Notes/> } />
               <Route path='/login' element={ <Login/> } />
               <Route path='/register' element={ <Register/> } />
               <Route path='/home' element={ <Home/> } />
