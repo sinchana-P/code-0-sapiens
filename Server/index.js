@@ -7,7 +7,7 @@ const db = mysql.createConnection({
     password:"S@nketh2",
     database:"college"
 })
-const port = 3000
+const port = 3500
 const app = express()
 
 app.use(bodyParser.urlencoded({extended:true}))
