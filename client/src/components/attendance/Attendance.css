@@ -1,22 +1,18 @@
 .attendance-main {
     /* background-color: pink; */
-    width: 80vw;
+    width: 87vw;
 }
 
-.attendance-class {
-    /* background-color: pink; */
+
+.heading {
+    padding-left: -13rem;
 }
 
 .attendance-class-inputs-container {
     display: flex;
     flex-direction: row;
-    min-width: 80vw;
 }
 
-.attendance-class-each {
-    width: 15rem;
-    margin: 2rem;
-}
 
 button {
     background-color: #4a55a2;

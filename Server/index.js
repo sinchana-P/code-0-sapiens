@@ -43,12 +43,12 @@ app.get("/login",(req,res)=>{
 })
 
 app.get("/register",(req,res)=>{
-    let id = req.body.id;
+    let id = req.query.id;
     let name = req.query.name;
     let password = req.query.password;
     let role = req.query.role;
     let phone = req.query.phone;
-    let classnum = req.body.class || null;
+    let classnum = req.query.class || null;
 
     let sql = `insert into user values ('001','${name}','${password}','${role}',null,'${phone}');`
 
@@ -63,9 +63,9 @@ app.get("/register",(req,res)=>{
     })
 })
 
-app.post("/notes",(req,res)=>{
-    let subject = req.body.subject; 
-    let classno = req.body.class;
+app.get("/notes",(req,res)=>{
+    let subject = req.query.subject; 
+    let classno = req.query.class;
 
     let sql = `select * from notes where sub_id = '${subject}' and class_id = '${classno}'; `;
 
@@ -79,13 +79,13 @@ app.post("/notes",(req,res)=>{
     })
 })
 
-app.patch("/addnotestodb",(req,res)=>{
-    let subject = req.body.subject;
-    let moduleno = req.body.module;
-    let chapter = req.body.chapter;
-    let pdf = req.body.pdf;
-    let classno = req.body.class;
-    let link = req.body.link;
+app.get("/addnotestodb",(req,res)=>{
+    let subject = req.query.subject;
+    let moduleno = req.query.module;
+    let chapter = req.query.chapter;
+    let pdf = req.query.pdf;
+    let classno = req.query.class;
+    let link = req.query.link;
 
     let sql = `update notes set pdf = '${pdf}', link = '${link}'  where class_id = '${classno}' and sub_id = '${subject}' and mod_id = '${moduleno}' and chp_id = '${chapter}';`;
 
@@ -99,9 +99,9 @@ app.patch("/addnotestodb",(req,res)=>{
     })
 })
 
-app.post("/getstudents",(req,res)=>{
-    let classno = req.body.class;
-    let subject = req.body.subject;
+app.get("/getstudents",(req,res)=>{
+    let classno = req.query.class;
+    let subject = req.query.subject;
 
     let sql = `SELECT s.id,s.name,(select count(sin.id) from user sin,attendance a where sin.id=a.id and sin.id=s.id and a.sub_id='${subject}' and s.cls_id='${classno}') as total,count(s.id) as attended from user s,attendance a where s.id=a.id and a.sub_id='${subject}' and s.cls_id='${classno}' and a.has_attended=1 group by id;`;
 
@@ -115,16 +115,16 @@ app.post("/getstudents",(req,res)=>{
     })
 })
 
-app.post("/sendattendance",(req,res)=>{
-    let subject = req.body.subject;
-    let date = req.body.date;
-    let time = req.body.time;
+app.get("/sendattendance",(req,res)=>{
+    let subject = req.query.subject;
+    let date = req.query.date;
+    let time = req.query.time;
 
 })
 
-app.post("/getlessonplan",(req,res)=>{
-    let classnum = req.body.class;
-    let subject = req.body.subject;
+app.get("/getlessonplan",(req,res)=>{
+    let classnum = req.query.class;
+    let subject = req.query.subject;
 
     let sql = `select * from lesson_plan where cls_id = '${classnum}' and sub_id = '${subject}';`
 
@@ -138,14 +138,14 @@ app.post("/getlessonplan",(req,res)=>{
     })
 })
 
-app.post("/updatelessonplan",(req,res)=>{
+app.get("/updatelessonplan",(req,res)=>{
     let sql = `update lesson_plan set is_completed='1' where cls_id = '9' and sub_id = '1' and mod_id = '1' and chp_id = '1';`
 })
 
-app.post("/getattendancesub",(req,res)=>{
-    let classno = req.body.class;
-    let subject = req.body.subject;
-    let student = req.body.student;
+app.get("/getattendancesub",(req,res)=>{
+    let classno = req.query.class;
+    let subject = req.query.subject;
+    let student = req.query.student;
 
     let sql = `SELECT s.id,a.sub_id,(select count(sin.id) from user sin,attendance a where sin.id=a.id and sin.id=s.id and a.sub_id='${subject}' and s.cls_id='${classno}') as total,count(s.id) as attended from user s,attendance a where s.id=a.id and a.sub_id='${subject}' and s.id='${student}' and s.cls_id='${classno}' and a.has_attended=1 group by s.id,a.sub_id;`;
 

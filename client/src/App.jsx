@@ -45,8 +45,8 @@ function App() {
               {/* <Route path='/profile' element={ <Profile/> } /> */}
               <Route path='/student' element={ <StdHome/> } />
               <Route path='/student/attendance' element={ <StdAttendance/> } />
-              <Route path='/student/attendance' element={ <StdNotes/> } />
-              <Route path='/student/attendance' element={ <StdDoubts/> } />                  
+              <Route path='/student/notes' element={ <StdNotes/> } />
+              <Route path='/student/doubts' element={ <StdDoubts/> } />                  
             </Routes>
           </div>
         </div>
