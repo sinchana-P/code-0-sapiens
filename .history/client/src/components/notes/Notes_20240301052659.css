@@ -1,0 +1,42 @@
+.notes-main {
+    width: 80vw;
+    background-color: pink;
+}
+
+h2 {
+    text-align: center;
+    padding: 2rem 3re;
+}
+
+.notes-container{
+    margin: 1rem 18rem;
+}
+
+.notes-form-container {
+    padding: 1rem 0;
+}
+
+.notes-upload-main {
+    display: flex;
+    flex-direction: row;
+}
+
+
+.notes-upload-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.notes-pdf, .notes-link {
+    display: flex;
+    flex-direction: row;
+    padding: 0.5rem 0;
+}
+
+.notes-upload-container {
+    padding: 0rem 1rem;
+}
+
+p{
+    font-weight: bold;
+}
