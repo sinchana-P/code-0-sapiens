@@ -1,0 +1,21 @@
+.topbar-container {
+    background-color: #4A55A2;
+    min-width: 95vw;
+    height: 4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.profile-div {
+    background-color: #EEF5FF;
+    color: #4a55a2;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-right: 10px;
+}

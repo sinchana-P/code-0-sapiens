@@ -1,0 +1,33 @@
+.attendance-main {
+    /* background-color: pink; */
+    width: 80vw;
+}
+
+.attendance-class {
+    /* background-color: pink; */
+}
+
+.attendance-class-inputs-container {
+    display: flex;
+    flex-direction: row;
+    min-width: 80vw;
+}
+
+.attendance-class-each {
+    width: 15rem;
+    margin: 2rem;
+}
+
+button {
+    background-color: #4a55a2;
+    color: #EEF5FF;
+    border: none;
+    padding: 0.5rem 1rem;
+}
+
+button:hover {
+    background-color: #EEF5FF;
+    color: #EEF5FF;
+    border: none;
+    padding: 0.5rem 1rem;
+}
