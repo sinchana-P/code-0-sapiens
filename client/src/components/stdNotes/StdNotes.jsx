@@ -30,10 +30,10 @@ const StdNotes = () => {
       <header className="header">
         <h1>Download Notes and Materials</h1>
       </header>
-
+<h2 className="section-heading">Modules</h2>
       {/* Main Content Area */}
       <main className="main-content">
-        <h2 className="section-heading">Modules</h2>
+        
         {/* Display modules */}
         <div className="modules-list">
           {/* Module 1 */}
