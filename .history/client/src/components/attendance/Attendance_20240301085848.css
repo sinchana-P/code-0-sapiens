@@ -12,8 +12,7 @@
 .attendance-class-inputs-container {
     display: flex;
     flex-direction: row;
-    /* width: 50px; */
-    /* background-color: pink; */
+    max-width: ;
 }
 
 

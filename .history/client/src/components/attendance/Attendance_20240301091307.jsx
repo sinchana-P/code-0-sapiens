@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 // import dayjs from 'dayjs';
 import { Form, Select, Checkbox, DatePicker, TimePicker, Table} from 'antd';
-import axios from 'axios'
+
 
 import './Attendance.css'
 
@@ -90,11 +90,7 @@ const Attendance = () => {
     const onSubmit = () => {
 
         console.log(stdClass, subject, date, time)
-        const res = axios.get('http://localhost:3500/getstudents', {
-            params: {class: stdClass, subject }
-        })
-
-        console.log(res)
+        axios.get('http://localhost:3500/')
 
     }
 

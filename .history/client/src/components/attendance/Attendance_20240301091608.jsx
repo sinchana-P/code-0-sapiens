@@ -91,7 +91,7 @@ const Attendance = () => {
 
         console.log(stdClass, subject, date, time)
         const res = axios.get('http://localhost:3500/getstudents', {
-            params: {class: stdClass, subject }
+            params: [{class: stdClass, subject }]
         })
 
         console.log(res)

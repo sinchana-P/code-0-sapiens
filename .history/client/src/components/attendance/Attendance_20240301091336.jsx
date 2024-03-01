@@ -90,11 +90,7 @@ const Attendance = () => {
     const onSubmit = () => {
 
         console.log(stdClass, subject, date, time)
-        const res = axios.get('http://localhost:3500/getstudents', {
-            params: {class: stdClass, subject }
-        })
-
-        console.log(res)
+        const res = axios.get('http://localhost:3500/getstudents')
 
     }
 

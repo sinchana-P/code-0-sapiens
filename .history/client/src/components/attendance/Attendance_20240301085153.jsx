@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 // import dayjs from 'dayjs';
 import { Form, Select, Checkbox, DatePicker, TimePicker, Table} from 'antd';
-import axios from 'axios'
+
 
 import './Attendance.css'
 
@@ -72,29 +72,20 @@ const Attendance = () => {
         },
     ]
 
-    const [stdClass, setStdClass] = useState('')
-    const [subject, setSubject] = useState('')
-    const [date, setDate] = useState('')
-    const [time, setTime] = useState('')
+    // const [class, setClass] = useState('')
+    // const [subject, setSubject] = useState('')
+    // const [date, setDate] = useState('')
+    // const [time, setClass] = useState('')
 
     const onChangeDate = (date, dateString) => {
-        // console.log(dateString);
-        setDate(dateString)
+        console.log(dateString);
     };
 
     const onChangeTime = (time, timeString) => {
-        // console.log(timeString);
-        setTime(timeString)
+        console.log(timeString);
     };
 
     const onSubmit = () => {
-
-        console.log(stdClass, subject, date, time)
-        const res = axios.get('http://localhost:3500/getstudents', {
-            params: {class: stdClass, subject }
-        })
-
-        console.log(res)
 
     }
 
@@ -115,7 +106,7 @@ const Attendance = () => {
                 <div className='selectClass'>
                 <div className='attendance-class-each'>
                     <Form.Item label="Class" style={{width: '200px' }} rules={[{ required: true, message: 'Please select class!' }]}>
-                    <Select placeholder="Class" onChange={value => setStdClass(value)}>
+                    <Select placeholder="class" >
                         <Select.Option value="class8">Class 8</Select.Option>
                         <Select.Option value="class9">Class 9</Select.Option>
                         <Select.Option value="class10">Class 10</Select.Option>
@@ -125,7 +116,7 @@ const Attendance = () => {
 
                 <div className='attendance-class-each'>
                     <Form.Item label="Subject" style={{width: '200px' }} rules={[{ required: true, message: 'Please select class!' }]}>
-                    <Select placeholder="Subject" onChange={value => setSubject(value)}>
+                    <Select placeholder="Subject">
                         <Select.Option value="maths">Maths</Select.Option>
                         <Select.Option value="science">Science</Select.Option>
                         <Select.Option value="social">Social</Select.Option>
