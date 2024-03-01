@@ -131,76 +131,75 @@ const Plans = () => {
   return (
     <div className='plans-main'>
       <h2 className='heading'>Plans</h2>
+        <Form
+            layout="vertical"
+            name="basic"
+            labelCol={{ span: 8 }}
+            wrapperCol={{ span: 16 }}
+            style={{ maxWidth: 600 }}
+            initialValues={{ remember: true }}
+            autoComplete="off"
+        >
+            <Form.Item label="Class" rules={[{ required: true, message: 'Please select class!' }]}>
+            <Select placeholder="class">
+                <Select.Option value="class8">Class 8</Select.Option>
+                <Select.Option value="class9">Class 9</Select.Option>
+                <Select.Option value="class10">Class 10</Select.Option>
+            </Select>
+            </Form.Item>
+            <Form.Item label="Sub" rules={[{ required: true, message: 'Please select class!' }]}>
+            <Select placeholder="Subject">
+                <Select.Option value="maths">Maths</Select.Option>
+                <Select.Option value="science">Science</Select.Option>
+                <Select.Option value="social">Social</Select.Option>
+            </Select>
+            </Form.Item>
+        </Form>
+      
+        <button onClick={handleSubmit}>Submit</button>
 
-         <div className='plans-container'>
-            <div className='plans-container-left'>
-                <Form
-                layout="vertical"
-                name="basic"
-                labelCol={{ span: 8 }}
-                wrapperCol={{ span: 16 }}
-                style={{ maxWidth: 600 }}
-                initialValues={{ remember: true }}
-                autoComplete="off"
-            >
-                <Form.Item label="Class" rules={[{ required: true, message: 'Please select class!' }]}>
-                <Select placeholder="class">
-                    <Select.Option value="class8">Class 8</Select.Option>
-                    <Select.Option value="class9">Class 9</Select.Option>
-                    <Select.Option value="class10">Class 10</Select.Option>
-                </Select>
-                </Form.Item>
-                <Form.Item label="Sub" rules={[{ required: true, message: 'Please select class!' }]}>
-                <Select placeholder="Subject">
-                    <Select.Option value="maths">Maths</Select.Option>
-                    <Select.Option value="science">Science</Select.Option>
-                    <Select.Option value="social">Social</Select.Option>
-                </Select>
-                </Form.Item>
-                </Form>
-          
-                <button style={{ width: '6rem', height: '2rem', textAlign: 'center' }} onClick={handleSubmit}>Submit</button>
+        <div>
+            <div>
+                {isSubmit && (
+                    <>
+                    {Object.keys(groupedChapters).map((module, index) => (
+                      
+                      <div key={index} className='module-chapters-checkbox'>
+                      <h3>{module}</h3>
+                      <CheckboxGroup>
+                          {groupedChapters[module].map((chapter, i) => (
+                          <Checkbox checked key={i} value={chapter} style={{width: '1200px'}} >
+                              {chapter}
+                          </Checkbox>
+                          ))}
+                      </CheckboxGroup>
+                      
+                      </div>
+                      
+                  ))}
+                  <button>Update Plan</button>
+                    </>
 
-                <div style={{marginTop: '1rem'}}>
-                    {isSubmit && (
-                        <>
-                        {Object.keys(groupedChapters).map((module, index) => (
-                          
-                          <div key={index} className='module-chapters-checkbox'>
-                          <h3 style={{padding: '0.8rem 0'}}>{module}</h3>
-                          <CheckboxGroup>
-                              {groupedChapters[module].map((chapter, i) => (
-                              <Checkbox checked key={i} value={chapter} style={{width: '130px'}} >
-                                  {chapter}
-                              </Checkbox>
-                              ))}
-                          </CheckboxGroup>
-                          
-                          </div>
-                          
-                      ))}
-                      <button style={{ width: '10rem', height: '2rem', textAlign: 'center', marginTop:'1.2rem' }}>Update Plan</button>
-                        </>
-                    )}
-                </div>
+                
+                )}
+
+                
             </div>
 
-            <div style={{width:'350px', height: '350px'}} className='plans-container-right'>
-              <Pie
-                data={data}
-                width={50} 
-                height={50} 
-              />
-            </div> 
-         </div>  
-
-                           
+            <div>
+            <Pie
+              data={data}
+              width={50} 
+              height={50} 
+            />
+            </div>                
 
             
 
-    </div>
+        </div>
 
 
+      </div>
    
   );
 }

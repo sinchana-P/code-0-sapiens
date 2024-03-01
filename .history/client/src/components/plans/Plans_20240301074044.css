@@ -1,7 +1,7 @@
 .plans-main{
     /* width: 90vw; */
-    padding: 0.2rem 2rem;
-    /* background-color: pink; */
+    padding: 0.2rem 5rem;
+    background-color: pink;
     /* max-height: 90vh; */
 
 }
@@ -26,13 +26,12 @@
 .plans-container-left {
     display: flex;
     flex-direction: column;
-    width: 45rem;
+    width: 40rem;
     /* background-color: green; */
 }
 .plans-container-right {
     display: flex;
     flex-direction: column;
     width: 40rem;
-    margin-top: 5rem;
-    /* background-color: rgb(13, 0, 128); */
+    background-color: rgb(13, 0, 128);
 }
