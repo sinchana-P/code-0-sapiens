@@ -11,10 +11,7 @@ const db = mysql.createConnection({
     password:"mysql",
     database:"college"
 })
-
-// S@nketh2
-
-const port = 3000
+const port = 3500
 const app = express()
 
 
