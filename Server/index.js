@@ -4,9 +4,12 @@ import bodyParser from "body-parser"
 const db = mysql.createConnection({
     host:"localhost",
     user:"root",
-    password:"S@nketh2",
+    password:"mysql",
     database:"college"
 })
+
+// S@nketh2
+
 const port = 3000
 const app = express()
 
@@ -16,24 +19,19 @@ app.listen(port,()=>{
     console.log("server started at http://localhost:"+port);
 })
 
-app.post("/login",(req,res)=>{
-    let role = req.body.role;
-    let userid = req.body.userid;
-    let password = req.body.password;
-
+app.get("/login",(req,res)=>{
+    let role = req.query.role;
+    let userid = req.query.userid;
+    let password = req.query.password;
+    console.log(role,userid,password)
     let sql = `select * from user where id='${userid}' and password = '${password}' and role='${role}';`
     db.query(sql,(err,result)=>{
-        if(err){
-            console.log(err.message)
+    if(err) throw err;
+        if(result.length == 0){
+            res.json({authentication:false})
         }
         else{
-            if(result.length === 0){
-                res.json({authentication:false}
-                )
-            }
-            else{
-                res.json({authentication:true})
-            }
+            res.json({authentication:true})
         }
     })
 })
