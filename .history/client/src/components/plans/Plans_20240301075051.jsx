@@ -161,7 +161,7 @@ const Plans = () => {
           
                 <button style={{ width: '6rem', height: '2rem', textAlign: 'center' }} onClick={handleSubmit}>Submit</button>
 
-                <div style={{marginTop: '1rem'}}>
+                <div>
                     {isSubmit && (
                         <>
                         {Object.keys(groupedChapters).map((module, index) => (
@@ -179,7 +179,7 @@ const Plans = () => {
                           </div>
                           
                       ))}
-                      <button style={{ width: '10rem', height: '2rem', textAlign: 'center', marginTop:'1.2rem' }}>Update Plan</button>
+                      <button style={{ width: '10rem', height: '2rem', textAlign: 'center', marginTop:'1em' }}>Update Plan</button>
                         </>
                     )}
                 </div>

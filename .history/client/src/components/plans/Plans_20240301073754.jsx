@@ -157,20 +157,20 @@ const Plans = () => {
                     <Select.Option value="social">Social</Select.Option>
                 </Select>
                 </Form.Item>
-                </Form>
+            </Form>
           
-                <button style={{ width: '6rem', height: '2rem', textAlign: 'center' }} onClick={handleSubmit}>Submit</button>
+            <button onClick={handleSubmit}>Submit</button>
 
-                <div style={{marginTop: '1rem'}}>
+                <div>
                     {isSubmit && (
                         <>
                         {Object.keys(groupedChapters).map((module, index) => (
                           
                           <div key={index} className='module-chapters-checkbox'>
-                          <h3 style={{padding: '0.8rem 0'}}>{module}</h3>
+                          <h3>{module}</h3>
                           <CheckboxGroup>
                               {groupedChapters[module].map((chapter, i) => (
-                              <Checkbox checked key={i} value={chapter} style={{width: '130px'}} >
+                              <Checkbox checked key={i} value={chapter} style={{width: '1200px'}} >
                                   {chapter}
                               </Checkbox>
                               ))}
@@ -179,13 +179,13 @@ const Plans = () => {
                           </div>
                           
                       ))}
-                      <button style={{ width: '10rem', height: '2rem', textAlign: 'center', marginTop:'1.2rem' }}>Update Plan</button>
+                      <button>Update Plan</button>
                         </>
                     )}
                 </div>
             </div>
 
-            <div style={{width:'350px', height: '350px'}} className='plans-container-right'>
+            <div style={{width:'350px', height: '350px'}} className='pie-container'>
               <Pie
                 data={data}
                 width={50} 
