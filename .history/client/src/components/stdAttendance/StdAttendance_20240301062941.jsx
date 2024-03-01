@@ -65,7 +65,9 @@ const Attendance = () => {
             <Table
             dataSource={attendanceData}
             columns={attendanceColumns}
-            pagination={false}            
+            pagination={false}
+            width={300}
+            
         >
       </Table>
 
