@@ -101,12 +101,9 @@ const Attendance = () => {
 
     const handleUpdateAttendance = () => {
         console.log(selectedRows);
-
-        const res2 = axios.get('http://localhost:3500/sendattendance', {
-            params: {selectedRows}
+        axios.get('http://localhost:3500/sendattendance', {
+            params: {se}
         })
-
-        console.log(res2)
     }
 
   return (

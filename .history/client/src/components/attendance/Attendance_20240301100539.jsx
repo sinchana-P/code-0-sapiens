@@ -106,7 +106,7 @@ const Attendance = () => {
             params: {selectedRows}
         })
 
-        console.log(res2)
+        
     }
 
   return (

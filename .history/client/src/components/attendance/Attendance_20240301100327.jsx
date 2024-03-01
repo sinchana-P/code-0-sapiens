@@ -5,6 +5,15 @@ import axios from 'axios'
 
 import './Attendance.css'
 
+
+const handleUpdateAttendance = (value) => {
+    console.log("hiii")
+    console.log(value);
+    // axios.get('http://localhost:3500/sendattendance', {
+    //     params: {value}
+    // })
+}
+
 const Attendance = () => {
 
     const [selectedRows, setSelectedRows] = useState([])
@@ -99,15 +108,6 @@ const Attendance = () => {
 
     }
 
-    const handleUpdateAttendance = () => {
-        console.log(selectedRows);
-
-        const res2 = axios.get('http://localhost:3500/sendattendance', {
-            params: {selectedRows}
-        })
-
-        console.log(res2)
-    }
 
   return (
     <div className='attendance-main'>
