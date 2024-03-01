@@ -11,9 +11,9 @@ import Notes from './components/notes/Notes';
 import Plans from './components/plans/Plans';
 import Attendance from './components/attendance/Attendance';
 import Profile from './components/profile/Profile';
+import StdAttendance from './components/stdAttendance/StdAttendance'
 import StudentSidebar from './components/global/sidebar/StudentSidebar';
 import StdHome from './components/stdHome/StdHome';
-import StdAttendance from './components/stdAttendance/StdAttendance'
 import StdNotes from './components/stdNotes/StdNotes';
 import StdDoubts from './components/stdDoubts/StdDoubts';
 
@@ -24,7 +24,7 @@ function App() {
     <div className="App">
       <div className='app-container'>
       
-      <Topbar userRole={userRole}/>
+      <Topbar />
       
         <div className='main-content'>
           <div className='left-content-container'>

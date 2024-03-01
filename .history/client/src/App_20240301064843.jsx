@@ -11,11 +11,8 @@ import Notes from './components/notes/Notes';
 import Plans from './components/plans/Plans';
 import Attendance from './components/attendance/Attendance';
 import Profile from './components/profile/Profile';
-import StudentSidebar from './components/global/sidebar/StudentSidebar';
-import StdHome from './components/stdHome/StdHome';
 import StdAttendance from './components/stdAttendance/StdAttendance'
-import StdNotes from './components/stdNotes/StdNotes';
-import StdDoubts from './components/stdDoubts/StdDoubts';
+import StudentSidebar from './components/global/sidebar/StudentSidebar';
 
 function App() {
   const [userRole, setUserRole] = useState('Teacher')
@@ -24,7 +21,7 @@ function App() {
     <div className="App">
       <div className='app-container'>
       
-      <Topbar userRole={userRole}/>
+      <Topbar />
       
         <div className='main-content'>
           <div className='left-content-container'>
@@ -45,8 +42,10 @@ function App() {
               {/* <Route path='/profile' element={ <Profile/> } /> */}
               <Route path='/student' element={ <StdHome/> } />
               <Route path='/student/attendance' element={ <StdAttendance/> } />
-              <Route path='/student/attendance' element={ <StdNotes/> } />
-              <Route path='/student/attendance' element={ <StdDoubts/> } />                  
+              <Route path='/student/attendance' element={ <StdContacts/> } />
+              <Route path='/student/attendance' element={ <StdAttendance/> } />
+              <Route path='/student/attendance' element={ <StdAttendance/> } />
+                  
             </Routes>
           </div>
         </div>

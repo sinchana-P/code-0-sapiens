@@ -1,7 +1,7 @@
 .attendance-main {
     /* background-color: pink; */
     width: 87vw;
-    padding: 1rem 20rem;
+    padding: 1rem 10rem;
 }
 
 .attendance-class {
@@ -34,5 +34,5 @@ button:hover {
 }
 
 .header {
-    margin: 1rem 5rem;
+    margin: 5rem;
 }

@@ -24,7 +24,7 @@ function App() {
     <div className="App">
       <div className='app-container'>
       
-      <Topbar userRole={userRole}/>
+      <Topbar user/>
       
         <div className='main-content'>
           <div className='left-content-container'>

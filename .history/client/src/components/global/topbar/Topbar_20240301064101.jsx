@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
 import './Topbar.css'
 
-const Topbar = ({userRole}) => {
-  // const [userRole, setUserRole] = useState('Teacher')
+const Topbar = () => {
+  const [userRole, setUserRole] = useState('Teacher')
 
   return (
     <div className='topbar-container'>

@@ -18,7 +18,7 @@ import StdNotes from './components/stdNotes/StdNotes';
 import StdDoubts from './components/stdDoubts/StdDoubts';
 
 function App() {
-  const [userRole, setUserRole] = useState('Teacher')
+  const [userRole, setUserRole] = useState('Student')
 
   return (
     <div className="App">

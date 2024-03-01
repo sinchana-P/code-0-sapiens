@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import './Topbar.css'
 
-const Topbar = ({userRole}) => {
+const Topbar = ({}) => {
   // const [userRole, setUserRole] = useState('Teacher')
 
   return (
