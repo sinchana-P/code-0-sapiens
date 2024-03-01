@@ -82,7 +82,7 @@ const Attendance = () => {
 
   return (
     <div className='attendance-main'>
-        <h2>Attendance</h2>
+        <h2 className='heading'>Attendance</h2>
         <div>
             <Form
                 layout="vertical"
